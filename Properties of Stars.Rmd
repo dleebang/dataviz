@@ -1,0 +1,52 @@
+---
+title: "Properties of Stars"
+author: "Davi Lee Bang"
+date: "23/12/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Background
+
+Astronomy is one of the oldest data-driven sciences. In the late 1800s, the director of the Harvard College Observatory hired women to analyze astronomical data, which at the time was done using photographic glass plates. These women became known as the “Harvard Computers”. They computed the position and luminosity of various astronomical objects such as stars and galaxies. Today, astronomy is even more of a data-driven science, with an inordinate amount of data being produced by modern instruments every day.
+
+I will analyze some astronomical data to inspect properties of stars, their absolute magnitude (which relates to a star's **luminosity**, or brightness), temperature and type (spectral class).
+
+The data is from the dslabs R package and I will use tidyverse to make following analysis.
+
+```{r loads, message=FALSE, warning=FALSE}
+library(tidyverse) 
+library(dslabs)
+data(stars)
+options(digits = 3)
+```
+
+Inspect the dataset:
+
+```{r message=TRUE}
+head(stars)
+```
+
+```{r}
+str(stars)
+```
+
+We can see that the dataset includes name, absolute magnitude, temperature
+in degrees Kelvin, and spectral class of stars. The absolute magnitude is a function of star luminosity, where **negative** values of magnitude have higher luminosity.
+
+
+
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
